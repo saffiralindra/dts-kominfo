@@ -1,0 +1,97 @@
+/* VARIABEL GLOBAL*/
+$bg-primary: #ebe8e8;
+$fontkonten: "Arial";
+$fonttitle: 18px;
+$font-color: (
+   "danger": red,
+   "success": green,
+   "info": blue,
+);
+$jarakmin: 10px;
+
+//Function -- cara panggilnya pakai include
+@mixin columnx($posisi) {
+   display: flex;
+   flex-direction: $posisi;
+}
+
+@mixin paddingmin($nilai, $font) {
+   padding: $nilai;
+   color: blue;
+   font-size: $font;
+}
+
+@mixin profile($size, $circle: false) {
+   width: $size;
+   height: $size;
+   border: dotted springgreen 1px;
+   @if $circle {
+      border-radius: 50%;
+   }
+   else {
+      border-radius: 2px;
+   }
+}
+
+.border {
+   border: solid 1px springgreen;
+}
+
+body {
+   background-color: $bg-primary;
+   font-size: 12px;
+   h1 {
+      color: map-get($font-color, "info");
+   }
+}
+
+.container {
+   margin-left: $jarakmin * 2;
+   margin-right: $jarakmin * 30;
+   .main-content {
+      padding: 20px;
+   }
+   ul,
+   li {
+      @include columnx("column");
+      @include paddingmin(10px, 18px);
+   }
+}
+
+//NESTING
+.main {
+   //parent selector
+   &-header,
+   &-footer {
+      padding: 10px;
+      font-size: $fonttitle;
+      ul,
+      li {
+         @extend .border;
+         padding-left: 10px;
+         background-color: burlywood;
+      }
+   }
+   &-header:hover {
+      background-color: violet;
+   }
+   &-content {
+      @include columnx("row");
+      @include paddingmin(10px, 14px);
+      img {
+         @include profile(100, false);
+      }
+      .content {
+         background-color: chocolate;
+         margin-left: 10px;
+         //font-size: 14px;
+      }
+      @extend .border;
+   }
+}
+
+/*.content {
+   /*VARIABLE LOCAL
+   font-family: $fontkonten;
+   color: map-get($font-color, "success");
+}*/
