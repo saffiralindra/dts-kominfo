@@ -1,0 +1,29 @@
+/*$bg-primary :wheat;
+$font-konten : 'Arial';
+$font-title : 18px;
+$font_color : (
+    'danger' : red,
+    'success' : green,
+    'info' : blue
+);
+$jarakmin:10px;
+*/
+body {
+   background-color: red;
+   /*font-size: 12px;*/
+   h1 {
+      /*color:map-get($font-color, 'info');*/
+      font-size: 20px;
+   }
+}
+/*
+.main{
+    &-header, &-footer{
+        padding:10px;
+        font-size:$font-title;
+        ul, li{
+            padding-left:10px;
+            background-color: burlywood;
+        }
+    }
+}*/
