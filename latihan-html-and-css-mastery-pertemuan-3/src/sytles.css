@@ -1,0 +1,78 @@
+/* ID Class Point = 100*/
+#text-1{
+    font-size: 60px;
+    color: red;
+}
+
+/* CLASS */
+.header-1{
+    font-size: 90px;
+    color: gold;
+}
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color: green;
+}
+
+/* ELEMENT */
+p{
+    font-size: 30px;
+    color: green;
+}
+
+.flex-container{
+    display:flex;
+    width: 250px;
+    height:250px;
+    background-color: cyan;
+    border: 2px solid black;
+    /* Flex Direction bisa row (kesamping) / column (kebawah tapi bukan block / row-reverse / column-reverse)*/
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.flex-item{
+    width:100px;
+    height:50px;
+    background-color: yellow;
+    margin: 5px 5px;
+}
+
+.header{
+    display:flex;
+    flex-direction: row;
+}
+
+.header-top-menu{
+    height: 20px;
+    width: 100vw; /*view width = mengikuti ukuran hp*/
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    background-color:grey;
+}
+
+.top-menu-right{
+    display:flex;
+    height: 40%;
+    width: 40%;
+    justify-content: flex-end;
+}
+
+.top-menu-left{
+    display:flex;
+    height: 40%;
+    width: 40%;
+}
