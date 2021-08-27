@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./bootstrap-5.1.0-dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="./css/style.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="root"></div>
+   </body>
+   <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+   <!--babel digunakan untuk membaca tag html di javascript-->
+   <!--cross origin digunakan untuk sebagai permission memperbolehkan penggunaan web-->
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+   <script type= "text/jsx" src="./script-homework1.js""></script>
+   <script src="./temp.js"></script>
+   <script>
+      const calc = new Calculate();
+      const input = document.getElementById("input");
+      const hasil = document.getElementById("hasil");
+      const temp1 = document.getElementById("temp1");
+      const temp2 = document.getElementById("temp2");
+      const bgcolor = document.getElementById("bgcolor");
+      //const row = document.getElementById("row");
+      function changed() {
+         //hasil.value = calc.cekAngka(input.value);
+         if (temp1.value == temp2.value) {
+            hasil.value = calc.hasilSama(input.value);
+         } else if ((temp1.value == "Celcius") & (temp2.value == "Farenheit")) {
+            hasil.value = calc.celcius_farenheit(input.value);
+         } else if ((temp1.value == "Celcius") & (temp2.value == "Reamur")) {
+            hasil.value = calc.celcius_reamur(input.value);
+         } else if ((temp1.value == "Farenheit") & (temp2.value == "Celcius")) {
+            hasil.value = calc.farenheit_celcius(input.value);
+         } else if ((temp1.value == "Farenheit") & (temp2.value == "Reamur")) {
+            hasil.value = calc.farenheit_reamur(input.value);
+         } else if ((temp1.value == "Reamur") & (temp2.value == "Celcius")) {
+            hasil.value = calc.reamur_celcius(input.value);
+         } else {
+            hasil.value = calc.reamur_farenheit(input.value);
+         }
+      }
+      function submitted(bgcolor) {
+         document.body.style.background = bgcolor.value;
+         //document.body.row.style.background = bgcolor.value;
+      }
+      function reset() {
+         input.value = "";
+         hasil.value = "";
+      }
+   </script>
+   <script src="./bootstrap-5.1.0-dist/js/bootstrap.bundle.min.js" />
+   
+</html>
