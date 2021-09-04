@@ -1,0 +1,134 @@
+body {
+   font-family: "Roboto", sans-serif;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+}
+
+.navbar {
+   width: 300px;
+   height: 125vh;
+   position: absolute;
+   margin-left: -300px;
+   background: #0b032d;
+   transition: all 0.5s ease;
+}
+
+.my-row {
+   width: 300px;
+   height: 106px;
+   color: white;
+   text-align: center;
+   margin-top: -10px;
+   line-height: 70px;
+   background: linear-gradient(68.3deg, rgba(245, 177, 97, 1) 0.4%, rgba(236, 54, 110, 1) 100.2%);
+   user-select: none;
+}
+
+img {
+   margin-top: 25px;
+   margin-left: 20px;
+}
+
+h3 {
+   text-align: center;
+   margin-top: 25px;
+   margin-left: 50px;
+   font-size: 50px;
+   font-family: "Roboto", sans-serif;
+}
+
+.navbar ul li a {
+   display: block;
+   height: 100%;
+   width: 93%;
+   line-height: 65px;
+   font-size: 15px;
+   color: white;
+   margin-left: 20px;
+   box-sizing: border-box;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   border-bottom: 1px solid black;
+   transition: 0.4s;
+}
+
+/* .link5 {
+   height: 60px;
+   width: 40%;
+   text-align: center;
+   line-height: 65px;
+   font-size: 15px;
+   color: white;
+   transition: 0.4s;
+} */
+
+.nav-link:active,
+.nav-link:focus,
+.nav-link:hover {
+   background-color: #ffffff26;
+   padding: 10px;
+}
+
+.my-container1 {
+   transition: 0.4s;
+}
+
+.my-container2 {
+   transition: 0.4s;
+}
+
+.br {
+   margin-left: 10px;
+   margin-top: 8px;
+   font-size: 30px;
+   color: white;
+   padding: 6px 12px;
+   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.active-nav {
+   margin-left: 0;
+}
+
+.active-cont {
+   margin-left: 300px;
+}
+
+#btn1 {
+   position: absolute;
+   cursor: pointer;
+   margin-top: 5px;
+   font-size: 30px;
+   color: white;
+   transition: all 0.5s ease;
+}
+
+.btn:focus {
+   box-shadow: none;
+}
+
+ul li:hover a {
+   padding: 50px;
+}
+
+.navbar ul a i {
+   margin-right: 16px;
+}
+
+#check {
+   display: none;
+}
+
+center {
+   color: white;
+   padding-top: 200px;
+}
+
+table {
+   color: white;
+   text-align: center;
+}

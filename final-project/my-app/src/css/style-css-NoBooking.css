@@ -1,0 +1,21 @@
+body {
+   font-family: "Roboto", sans-serif;
+   background: linear-gradient(68.3deg, rgba(245, 177, 97, 1) 0.4%, rgba(236, 54, 110, 1) 100.2%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+}
+
+p {
+   margin-top: 150px;
+   text-align: center;
+   font-size: 2rem;
+}
+
+.text-center {
+   margin-top: -10px;
+}
