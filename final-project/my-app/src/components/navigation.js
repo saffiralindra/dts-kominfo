@@ -1,66 +1,45 @@
+import { Layout, Menu } from "antd";
+import { DesktopOutlined, PieChartOutlined, FileOutlined, UserOutlined, TeamOutlined } from "@ant-design/icons";
+import { NavLink, useHistory } from "react-router-dom";
 import React from "react";
-import logo from "../image/logo.png";
-import "../css/style-nav.css";
+const { Sider } = Layout;
 
 class Navigation extends React.Component {
+   state = {
+      collapsed: false,
+   };
+
+   onCollapse = (collapsed) => {
+      console.log(collapsed);
+      this.setState({ collapsed });
+   };
+
    render() {
+      const { collapsed } = this.state;
       return (
-         <div>
-            <nav className="navbar navbar-expand d-flex flex-column align-items-start" id="sidebar">
-               <div className="container">
-                  <div className="row justify-content-start my-row">
-                     <div className="col-md-1">
-                        <img src={logo} alt="logo" width="50" />
-                     </div>
-                     <div className="col-md-1">
-                        <h3>BRI</h3>
-                     </div>
-                  </div>
-               </div>
-               <ul className="navbar-nav d-flex flex-column mt-5 w-100">
-                  <div className="nav-item w-100">
-                     <li>
-                        <a href="./navigation.js" className="nav-link text-light pl-4 link1">
-                           <i className="fas fa-home"></i>Beranda
-                        </a>
-                     </li>
-                     <li>
-                        <a href=".../public/booking.html" className="nav-link text-light pl-4 link2">
-                           <i className="far fa-bookmark"></i>Book Nomor Antrian
-                        </a>
-                     </li>
-                     <li>
-                        <a href="https://reactjs.org" className="nav-link text-light pl-4 link3">
-                           <i className="fas fa-list"></i>Daftar Bank & Info Antrian
-                        </a>
-                     </li>
-                     <li>
-                        <a href="./login.js" className="nav-link text-light pl-4 link4">
-                           <i className="far fa-user"></i>Sign Out
-                        </a>
-                     </li>
-                  </div>
-               </ul>
-            </nav>
+         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
+            <Menu theme="dark" defaultSelectedKeys="key[]" mode="inline">
+               <Menu.Item key="1" icon={<PieChartOutlined />}>
+                  <NavLink to="/beranda">Beranda</NavLink>
+               </Menu.Item>
 
-            <div className=" head border border-warning border-top-0 border-end-0 border-start-0">
-               <input type="checkbox" id="check" />
-               <label htmlFor="check" />
+               <Menu.Item key="2" icon={<DesktopOutlined />}>
+                  <NavLink to="/booking">Book Nomor Antrian</NavLink>
+               </Menu.Item>
 
-               <div className="container p-2 my-container1">
-                  <div className="row justify-content-start">
-                     <div className="col-md-1">
-                        <button className="btn">
-                           <i className="fas fa-bars" id="btn1"></i>
-                        </button>
-                     </div>
-                     <div className="col-md-1">
-                        <h4 className="br">Beranda</h4>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+               <Menu.Item key="3" icon={<FileOutlined />}>
+                  <NavLink to="/daftar-bank">Daftar Bank</NavLink>
+               </Menu.Item>
+
+               <Menu.Item key="4" icon={<TeamOutlined />}>
+                  <NavLink to="/info-antrian">Info Antrian</NavLink>
+               </Menu.Item>
+
+               <Menu.Item key="5" icon={<UserOutlined /*onClick={history.push("/login")}*/ />}>
+                  Sign Out
+               </Menu.Item>
+            </Menu>
+         </Sider>
       );
    }
 }

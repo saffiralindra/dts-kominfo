@@ -1,75 +1,73 @@
-import React from "react";
-import Login from "./login";
-import logo from "../image/logo.png";
-import "../css/style-form-login.css";
+//import React from "react";
+import { Form, Input, Button } from "antd";
+import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Layout } from "antd";
+import { useHistory } from "react-router-dom";
 
-class formlogin extends React.Component {
-   render() {
-      return (
-         <>
-            <Login />
-            <div className="input">
-               <div className="wrapper">
-                  <div className="logo">
-                     <img alt="Foto" src={logo} />
-                  </div>
-                  <div className="title-text">
-                     <div className="title login">Queue System</div>
-                     <div className="title signup">Queue System</div>
-                  </div>
-                  <div className="form-container">
-                     <div className="slide-controls">
-                        <input type="radio" name="slide" id="login" defaultChecked />
-                        <input type="radio" name="slide" id="signup" />
-                        <label htmlFor="login" className="slide login">
-                           Login
-                        </label>
-                        <label htmlFor="signup" className="slide signup">
-                           Signup
-                        </label>
-                        <div className="slider-tab"></div>
-                     </div>
-                     <div className="form-inner">
-                        <form action="./navigation.js" className="login">
-                           <div className="field">
-                              <input type="text" placeholder="Email Address" required />
-                           </div>
-                           <div className="field">
-                              <input type="password" placeholder="Password" required />
-                           </div>
-                           <div className="pass-link">
-                              <a href="https://reactjs.org">Forgot password?</a>
-                           </div>
-                           <div className="field btn">
-                              <div className="btn-layer"></div>
-                              <input type="submit" value="Login" />
-                           </div>
-                           <div className="signup-link">
-                              Not a member? <a href="https://reactjs.org">Signup now</a>
-                           </div>
-                        </form>
-                        <form action="./navigation.js" className="signup">
-                           <div className="field">
-                              <input type="text" placeholder="Email Address" required />
-                           </div>
-                           <div className="field">
-                              <input type="password" placeholder="Password" required />
-                           </div>
-                           <div className="field">
-                              <input type="password" placeholder="Confirm password" required />
-                           </div>
-                           <div className="field btn">
-                              <div className="btn-layer"></div>
-                              <input type="submit" value="Signup" />
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </>
-      );
+const { Header, Footer, Content } = Layout;
+
+export default function FormLogin() {
+   const onFinish = (values) => {
+      console.log("Received values of form: ", values);
+   };
+   let history = useHistory();
+   function handleClick() {
+      history.push("/beranda");
    }
-}
 
-export default formlogin;
+   return (
+      <Layout style={{ minHeight: "100vh" }}>
+         <Content style={{ paddingTop: "250px" }}>
+            <div>
+               {/* Login */}
+               <Form
+                  name="normal_login"
+                  className="login-form"
+                  initialValues={{
+                     remember: true,
+                  }}
+                  onFinish={onFinish}
+               >
+                  <Form.Item
+                     name="username"
+                     rules={[
+                        {
+                           required: true,
+                           message: "Please input your Username / E-mail!",
+                        },
+                     ]}
+                  >
+                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username / E-mail" />
+                  </Form.Item>
+                  <Form.Item
+                     name="password"
+                     rules={[
+                        {
+                           required: true,
+                           message: "Please input your Password!",
+                        },
+                     ]}
+                  >
+                     <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Password" />
+                  </Form.Item>
+                  <Form.Item>
+                     <a className="login-form-forgot" href="https://reactjs.org">
+                        Forgot password
+                     </a>
+                  </Form.Item>
+                  <Form.Item>
+                     <Button type="primary" htmlType="submit" className="login-form-button" onClick={handleClick}>
+                        Log in
+                     </Button>
+                     <div className="regis">
+                        Or <a href="/form-register">Register now!</a>
+                     </div>
+                  </Form.Item>
+                  ;
+               </Form>
+               {/* Akhir Login */}
+            </div>
+         </Content>
+      </Layout>
+   );
+}

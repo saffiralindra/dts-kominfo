@@ -1,19 +1,26 @@
-import React from "react";
-import "../css/style-nav.css";
+//import React from "react";
+//import "../css/style-nav.css";
+import { Typography } from "antd";
+import { Layout } from "antd";
 import Navigation from "./navigation";
+const { Content } = Layout;
 
-class NoBooking extends React.Component {
-   render() {
-      return (
-         <>
-            <Navigation />
-            <div class="container my-container2">
-               <p>Anda sedang tidak membooking antrian saat ini</p>
-               <p class="text-center">Silahkan lakukan booking melalui aplikasi pada H-1</p>
-            </div>
-         </>
-      );
-   }
+const { Text } = Typography;
+
+export default function NoBooking() {
+   return (
+      <Layout style={{ minHeight: "100vh" }}>
+         <Navigation />
+         <Layout className="site-layout">
+            <Content className="site-layout-background">
+               <p>
+                  <Text strong>Anda sedang tidak membooking antrian saat ini</Text>
+               </p>
+               <p>
+                  <Text strong>Silahkan lakukan booking melalui aplikasi pada H-1</Text>
+               </p>
+            </Content>
+         </Layout>
+      </Layout>
+   );
 }
-
-export default NoBooking;

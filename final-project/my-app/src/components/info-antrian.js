@@ -1,60 +1,59 @@
 import React from "react";
+import "antd/dist/antd.css";
+import { Button, Layout } from "antd";
+import { Row, Col } from "antd";
 import Navigation from "./navigation";
 
-class InfoAntrian extends React.Component {
-   render() {
-      return (
-         <>
-            <Navigation />
-            <div class="container my-container2">
-               <h3 class="text-light mt-3 mb-5">Info Antrian Hari Ini</h3>
-               <div class="container">
-                  <div class="row mb-3">
-                     <label for="colFormLabel" class="col-sm-3 text-light col-form-label">
-                        Bank
-                     </label>
-                     <div class="col-sm-4">
-                        <label for="colFormLabel" class="text-light col-form-label">
-                           Bank KCP Soreang
-                        </label>
-                        {/*<input type="email" class="form-control" id="colFormLabel" placeholder="Bank KCP Soreang" />*/}
-                     </div>
-                  </div>
-                  <div class="row mb-3">
-                     <label for="colFormLabel" class="col-sm-3 text-light col-form-label">
-                        Alamat
-                     </label>
-                     <div class="col-sm-4">
-                        <label for="colFormLabel" class="text-light col-form-label">
-                           Jl. Soreang No.181 Bandung
-                        </label>
-                        {/*<input type="email" class="form-control" id="colFormLabel" placeholder="Jl. Soreang No.181 Bandung" />*/}
-                     </div>
-                  </div>
-                  <div class="row mb-3">
-                     <label for="colFormLabel" class="col-sm-3 text-light col-form-label">
-                        Nomor Antrian yang sedang dilayani saat ini
-                     </label>
-                     <div class="col-sm-4">
-                        <label for="colFormLabel" class="text-light col-form-label">
-                           123
-                        </label>
-                        {/*<input type="email" class="form-control" id="colFormLabel" placeholder="123" />*/}
-                     </div>
-                  </div>
-               </div>
-               <div class="d-grid gap-2 d-sm-flex justify-content-sm-start pt-3">
-                  <button type="button" class="btn btn-primary btn-sm">
-                     Kembali
-                  </button>
-                  <button type="button" class="btn btn-secondary btn-sm">
-                     Booking untuk besok
-                  </button>
-               </div>
-            </div>
-         </>
-      );
-   }
-}
+const { Content } = Layout;
 
-export default InfoAntrian;
+export default function InfoAntrian() {
+   return (
+      <Layout style={{ minHeight: "100vh" }}>
+         <Navigation />
+         <Layout className="site-layout">
+            <Content className="site-layout-background">
+               <Layout style={{ alignItem: "center" }}>
+                  <h3 style={{ marginTop: 150 }}>Info Antrian Hari Ini</h3>
+                  <Row style={{ marginLeft: 200, marginTop: 50 }}>
+                     <Col span={18} push={6}>
+                        Bank KCP Soreang
+                     </Col>
+                     <Col span={6} pull={18}>
+                        Bank
+                     </Col>
+                  </Row>
+                  <Row style={{ marginLeft: 200 }}>
+                     <Col span={18} push={6}>
+                        Jl. Soreang No.181 Bandung
+                     </Col>
+                     <Col span={6} pull={18}>
+                        Alamat
+                     </Col>
+                  </Row>
+                  <Row style={{ marginLeft: 200 }}>
+                     <Col span={18} push={6}>
+                        123
+                     </Col>
+                     <Col span={6} pull={18}>
+                        Nomor Antrian Saat Ini
+                     </Col>
+                  </Row>
+
+                  <Row justify="end" style={{ marginTop: 50 }}>
+                     <Col span={4}>
+                        {" "}
+                        <Button type="primary" style={{ width: 200 }}>
+                           Kembali
+                        </Button>
+                     </Col>
+                     <Col span={4}>
+                        {" "}
+                        <Button style={{ width: 200 }}>Booking untuk Besok</Button>
+                     </Col>
+                  </Row>
+               </Layout>
+            </Content>
+         </Layout>
+      </Layout>
+   );
+}

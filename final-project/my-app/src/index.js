@@ -1,36 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-/* Form Login */
-//import FormLogin from "./components/form-login";
-
-/* Halaman Dalam */
-//import NoBooking from "./components/indexNoBooking";
-//import WithBooking from "./components/indexWithBooking";
-
-/* Form Booking */
-//import FormBooking from "./components/form-booking";
-//import DetailBooking from "./components/detail-booking";
-
-/* Form Daftar Bank */
-//import DaftarBank from "./components/daftarbank";
-
-/* Form Info Antrian */
-import InfoAntrian from "./components/info-antrian";
+import "antd/dist/antd.css";
+import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
    <React.StrictMode>
-      {/*<Navigation />
-      <FormLogin />
-      <NoBooking />
-      <WithBooking />
-      <FormBooking />
-      <DetailBooking />
-      <DaftarBank />
-      <InfoAntrian />*/}
-      <InfoAntrian />
+      <App />
    </React.StrictMode>,
    document.getElementById("root")
 );

@@ -1,50 +1,78 @@
 import React from "react";
-import logo from "../image/logo.png";
 import "../css/style-nav.css";
+import { Table } from "antd";
+import { Layout } from "antd";
 import Navigation from "./navigation";
+const { Content } = Layout;
 
-class WithBooking extends React.Component {
-   render() {
-      return (
-         <>
-            <Navigation />
-            <div className="container mt-4 my-container2">
-               <h4>Daftar Booking</h4>
-
-               <table className="table">
-                  <thead>
-                     <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Bank Tujuan</th>
-                        <th scope="col">Keperluan Layanan</th>
-                        <th scope="col">Tgl/Jam Booking</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <th scope="row">1</th>
-                        <td>Bank BRI Meruya</td>
-                        <td>Transaksi</td>
-                        <td>02-09-2021/15.00</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">2</th>
-                        <td>Bank BRI Kedoya</td>
-                        <td>Menabung</td>
-                        <td>02-09-2021/15.00</td>
-                     </tr>
-                     <tr>
-                        <th scope="row">2</th>
-                        <td>Bank BRI Ciputat</td>
-                        <td>Pinjaman Bank</td>
-                        <td>J02-09-2021/15.00</td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-         </>
-      );
-   }
+export default function WithBooking() {
+   return (
+      <Layout style={{ minHeight: "100vh" }}>
+         <Navigation />
+         <Layout className="site-layout">
+            <Content className="site-layout-background">
+               <div className="container mt-4 my-container2">
+                  <h4>Daftar Booking</h4>
+                  <div>
+                     <Table primary-text columns={columns} dataSource={data} onChange={onChange} />,
+                  </div>
+               </div>
+            </Content>
+         </Layout>
+      </Layout>
+   );
 }
 
-export default WithBooking;
+const columns = [
+   {
+      title: "Nomer",
+      dataIndex: "nomer",
+   },
+   {
+      title: "Bank Tujuan",
+      dataIndex: "bank",
+   },
+   {
+      title: "Keperluan Layanan",
+      dataIndex: "keperluan",
+   },
+   {
+      title: "Tanggal Booking",
+      dataIndex: "tanggal",
+   },
+];
+
+const data = [
+   {
+      key: "1",
+      nomer: "1",
+      bank: "BRI Kebayoran",
+      keperluan: "Menabung",
+      tanggal: "08-09-2021",
+   },
+   {
+      key: "2",
+      nomer: "2",
+      bank: "BRI Kebayoran",
+      keperluan: "Menabung",
+      tanggal: "08-09-2021",
+   },
+   {
+      key: "3",
+      nomer: "3",
+      bank: "BRI Kebayoran",
+      keperluan: "Menabung",
+      tanggal: "08-09-2021",
+   },
+   {
+      key: "4",
+      nomer: "4",
+      bank: "BRI Kebayoran",
+      keperluan: "Menabung",
+      tanggal: "08-09-2021",
+   },
+];
+
+function onChange(pagination, filters, sorter, extra) {
+   console.log("params", pagination, filters, sorter, extra);
+}
