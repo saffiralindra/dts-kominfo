@@ -1,0 +1,47 @@
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   background-color: #222 !important;
+   text-align: center;
+}
+
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1.ant-typography {
+   color: #ffff57 !important;
+}
+
+button.ant-typography ant-btn-round ant-btn-lg {
+   background-color: transparent;
+   color: antiquewhite;
+}
+
+button.ant-typography ant-btn-round ant-btn-lg:hover {
+   background-color: antiquewhite;
+   color: #222;
+}
+
+h2.ant-typography {
+   color: antiquewhite !important;
+}
+
+.content {
+   text-align: left;
+   padding: 10%;
+}
+
+.ant-card-head-title {
+   color: #ffff57;
+}
+
+.ant-card-head {
+   background-color: #222 !important;
+}
+
+.ant-card-bordered {
+   border: 0 !important;
+}
